@@ -33,6 +33,6 @@ int main()
     /*in this program there was no need to dynamically allocate array but just for illustration purpose we did that.*/
 
 
- return 0;
+ return  0;
 }
 
