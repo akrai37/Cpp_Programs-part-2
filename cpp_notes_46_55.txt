@@ -1,0 +1,19 @@
+46-50
+-union is similar to structure except it has LIMITED memory . we will access or initialize the variable of union using its datatype
+variable just like struture. it doesnt matter how many variables are declared in union , we can store the value of only one variable in it.ex-ankush is the datatype variable of union and rollno &age are the variables of union.among ankush.age and ankush.rollno only one value will be printed . with one datatype variable you can INITIALIZE only one local variable of union because the memory is LIMITED and  simply because of the property of union. one datatype variable-can INITIALIZE- only one local variable in union.
+union are outdated , not much in use.
+-"new" is used to asign the address to the pointer DYNAMICALLY. "new" finds a memory location for the value we want to store without giving it the VARIABLE. ex-pointer = new int(24); where pointer will store the address of memory location assign by the "new" where value "24" is stored. 
+it allows to access the value stored in a memory location directly by pointer without giving it a variable . 
+ex-int age=24; pointer = &age; no need for age variable.
+-we can allocate array values dynamically . we will asign the address of the array through "new" and store it in the pointer.look for the program. The values can be assigned using for loop .ex- *(pointer +i); is referring to the (0+i)th index of the array .look for the program.
+-Dangling pointer is the pointer whose value has been deleted at the location but still points to the same memory location. by using delete keyword you can just delete the value, the pointer points to in this case is deleting the value 10(any value) but it's still pointing to same location which is called dangling pointer , in order to remove this pointing, we use null pointer or assign null value to the pointer so it removes the pointing to that location in memory.
+in other words, pointer has been made free of the address it had stored (by assigning it the nullptr) as it is no longer useful since value stored in  the address has been deleted. 
+-"auto" has the ability to take any datatype value without declaring the datatype. it will automatically find the datatype but you will have to INITIALIZE the variable where it is declared .syntax-auto age=10;
+
+51-55
+-"Range based for loop" allows the for loop to print the values of defined arrays.It means it can also ITERATE for already defined array or range rather than the user specifying the range while defining the for loop.syntax- for(i:ArrayOrRange){ }.look for code if confusion .
+-string is just combination of characters.Its always used in quotation mark. syntax&&ex- string name; name="peter"; 
+-The function that calls itself is the recursive function. The common  example is finding factorial. logic is important . Consider it as different windows(functions) open at the same time. The result of last window is used for 2nd last window . Similarly , the result of 2nd last window will be used as the result of 3rd last window. It will go on  until the rsult of '2nd window' is used for'1st window' or the 'function' . The function is calling  itself until the termination condition is met.
+-fn overloading means functions with same name but with different  parameters .Remember , there parameters have to be DIFFERENT, not the return type .Return type is the datatype used before defining the function.ex- void display(){};  void display(string name){};
+(here void is the return type)
+-classes are similar to the structures.They are user difined datatype containing variables , methods and is called in the main fn using a variable of the class. But there are some differences.It can have children classes that can acquire the properties of parent classes .A class has all members private by default. A struct is a class where members are public by default. ex-class student{}; int main(){student anil;}
