@@ -1,0 +1,18 @@
+56-60
+-object of class is used to access members , variables in the main fn or any other fn. syntax- Human anil;//anil is the object.
+we can create any no. of objects of a single class.
+-we can use "pointer objects" of classes also .The values will be stored in the heap rather than stack.syntax- Human *bunty= new Human();//here , *bunty is the pointer of human. it is used to refer many memory locations of the class human.
+bunty->name="bunty";//so, object bunty of "human" class is referring to the memory location containing the name "bunty"
+-we can define the method of the class outside the class using the SCOPE resolution. we cannot define the variable outside the class, only methods.syntax-void Human::space(){ };
+-Private Access Specifier is used when we dont want to share the data or the working of data to all the users. Private data can be accessed through Public specifier by acquiring the properties of private in the public. Then , when we will call the public specifier properties(methods,fns or variables) in our main function through the class object, we will indirectly acquire the properties of the private accessifier. 
+-contructor---- It has same name as of class and it does not have any return type. It will be called AUTOMATICALLY when class's object is created in the main function and all its statements and methods will be executed automatically. it is mainly used to store default values , methods that we want to always execute  when class's object is called.it is generally declared in public specifier.
+syntax-class Human{public:
+						Human(){methods}};//name of constructor should exactly be same
+
+61-65
+-overloading constructor means diffrent constructors with same name but with different parameters.
+-if the constructor takes the parameter, than we can declare the value of parameter while declaring th object of class or during defining the constrcutor in class. syntax-Human rekha("roni");//we could write it without parameters also if values are declared during initialization in the constructor.in this example name of person was defined during declaring the object of class but age wasnt . then age would be the value declared during defining the constructor.take a look at code.
+-destructor is used to destroy the constructor. it releases the memory taken by constructor members(variables,functions etc).we can use destructor only if the class object is a pointer.then we will delete the object of the class using "delete" operator which will call  the destructor.REMEMBER, we are only calling the destuctor through "delete" operator. the destructor should contain the other delete items to free the memory.syntax- ~Human(){ };
+"new" keyword is used to allocate the memory dynamically.syntax-Human prakash; prakash=new Human();  here,"new" will allocate the memory dynamically and it will return the address of that memory to the pointer i.e prakash.
+ex--> name = new string (creates a a block of memory in heap and returns the addres of that block to name variable.)
+-static variable or member is the one whose value changes after each update if updation is done.Each time you access the static variable you will get the updated value of static variable .if the static variable is in the class,then we have to define it outside the class using SCOPE operator. look at the code.
