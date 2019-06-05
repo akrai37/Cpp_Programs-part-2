@@ -31,7 +31,7 @@ public:
 
 int main(){
     Student aman;
-    //aman.name="aman";// it will show the error that name is protected .Here the logic is that the is value is assigned in the main fn which contradicts the properties of protected i.e can only be used in derived class.
+    //aman.name="aman"; // it will show the error that name is protected .Here the logic is that the is value is assigned in the main fn which contradicts the properties of protected i.e can only be used in derived class.
     aman.setname("aman");
     aman.display();
 
