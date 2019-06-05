@@ -1,0 +1,33 @@
+66-70
+-static methods are static functions. static members can only use static variables.it is shared by all the objects of the class.
+and thats why there are continuous updation if there is any. it is generally called using scope operator in the main function.
+ex-   Human::humanMember(); //ex of calling static member in main function.
+-Friend function is the special type of fn that can access the member of the class whose friend it is.It will be declared inside the class but it will be defined outside the class. syntax&ex-  class classname{friend void display(Human man);} ;
+void display(classname man){
+    cout<<man.name<<endl<<man.age<<endl;//it is using the members of the friend class that are name and age and attaching it to the object.
+    //Since it is the FRIEND of that class it can access the values of that class even if they are private.
+};
+int main(){
+Human ramesh("ramesh",22);
+display(ramesh);
+return 0;
+}
+Friend class:-A friend class can access private and protected members of other class in which it is declared as friend.
+-Inheritance:- acquiring the properties of one class into another is called inheritance. the class which is inherited or gets inherited is called base class and the class which inherits the properties is called derieved or subclass.the subclass can access the members of the base class without "dot" operator.ex-Human.name="asdf"; is not neccessary rather it can directly access the member.ex-name=asdf"; .Look for code for better understanding .
+we can call the members of the base class through the object of the derieved class and even for this , we dont need "dot" operator.
+-difference between friend and subclass----1. we will need "dot" operator to access the member od the class in which friend fn is declared but subclass can directly access the members .2. friend class can access the private members the class but subclass cannot(only protected and public).3.we cannot call any fn of base class using frienfd class but it is possible through derieved class.  
+-private:-private members are accessible only in the base class. protected:- protected members are accessible in  the base class as well as derieved class. public:-public members are accessible anywhere in the program.
+
+
+71-75 
+-public Inheritance:-public inheritance means that derived class will only be able to access the public members of the base class, not protected and private members.syntax-class Student : public Person{};
+-Protected Inheritance:- all the protected and the public members of the base class will act as protected members of the derived class.
+syntax:-class Student : protected Person{ };
+-private inheritance:-all the protected and the public members of the base class will act as private members of the derived class.
+syntax-class Student : private Person{ };
+-dont be confused for Public,private and protected inheritance.there properties are same as access specifiers respectively. for simplicity, imagine all the members of base class are part of derived class(as if they are DEFINED or WRITTEN in the derived class), and they have there separate access specifier whether it is public,private or protected which depends upon INHERITANCE.so casually ,we can say that everything belongs to the derived class but we can decide the access specifier of the members of base class. 
+-we can sometimes get confused because of the main() function. we can only call public members of the base class through object of derived class , neither protected nor public. ofcourse we have our indirect ways i.e using public specifier to access the private members.
+-we can change the access level of the variable OR we can acquire the properties of the private inheritance class(which of course can be private or public)by changing the access level.syntax-Person :: name;//which will make the vairable "name" as "public" and available to all.
+-while calling the constructor and destructor of the base class through the object of derived class which also has its constructor and destructor, it will first call the C of the base class, then C of the derived class and then it will call the D of DERIVED class and later, it will call D of base class. IF pointer object is used for the class , then we will use delete keyword to call the destructor.
+-one confusion is diffrence between private and protected specifier i.e we can access private members of the base class into derived(earlier i thought , it is not possible but is able to access the private members. The only reason can be because derived class consist of all the members (including its own as well as base class), so it means that it can acquire the properties of the private specifier of its OWN class, because that is allowed(private may not be accessed outside of the class but it can be accessed inside of the class), and same thing is done by protected inheritance i.e only derived class can use the properties of the base class.
+also,if inherited class is declared as private or protected ,it members cannot be accessed or used in the main function directly as mentioned above in line 29. 
