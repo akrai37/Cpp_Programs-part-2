@@ -1,0 +1,44 @@
+76-81
+-multiple inheritance:-acquiring properties of MULTIPLE classes(more than one class) into another class(base class) is called multiple inheritance. thats it.
+-if we have to pass the arguents to the constructor of the base class through derived class,it is possible by getting the arguments to the constructor of derived class and then allowing the base class constructor to acquire those argumments. we have certain procedure to do that. syntax:-class Child : public Father, public Mother{
+public:
+    Child(int childheight,string cname) : Father(childheight),Mother(cname){ //its just we have to pass the values to the constructor of base class through derived class.
+
+        cout<<"child constructor is called"<<endl;
+    };
+-overriding:-functions with same name and same parameters cause overriding of that function. when the fn is called through the object of the derived class , it will call the derived class fn first,(unlike constructors) due to which the base class fn is OVERRIDDEN.  	
+-"this" keyword:-in my definition , this keyword is used when we have the same name for two variables , one is the local variable of a subclass(generally , it is subclass only)and the other one is global or local variable of the bigger fn.syntax:-this->variable
+ex- void myage(int age)//age here is the local variable with the same name as that of another variable.
+    {
+      this->age=age;
+    };
+the value passed into the local variable "age" through the main fn(in this case)will be stored in the memory whose address is stored in "this->age" pointer. So, "this" helps to tell the compiler the difference between both the "age" variables when needed(in this case, when one's value had to be assigned to the other).one is storing the value coming to it, and the other is referring to the address of the "memory location".	
+-calling the method of base class in another function using the object of derived class which is passed as the argument instead of base class argument is also possible.nothing tricky.look for code.
+
+
+82-85
+-Polymorphism :- it means many forms. it occurs when there is heirarchy of classes with same functions (same name and parameters, identical) and we have to decide which function of which class has to be called and which function has to be OVERRIDDEN.the fn can be overidden using VIRTUAL keyword. it will used infront the fn. syntax :- virtual void introduce(){ }; 
+-in the program ,we used "passed by  reference" for the local variable , its explanation is in other file.
+for rememberance, remember that polymorphism involves overriding of a function. 
+-----------------------------------------------------
+why cant i directly call the method of particular class using its own method?why to use polymorphism?
+-------you are calling the functions by using their own objects. Whenever you know what object you should use to call that function, then you don't need to use polymorphism. What if you don't know which object's function to call.
+
+Let's say you are going to build a game, and there are 100 types of aliens with their own kinds of power. After certain period of time one alien lands on earth and you have to kill it before it kills you. But what kind of power it will apply on you depends what kind of alien it is. You certainly don't know what alien will come next. And writing if condition 100 times is definitely a bad idea. What you will do is polymorphism. You have one task that is *attack* and many different kinds of *attack* and with one variable you can achieve this
+------------------------------------------------------
+-virtual function:-if a function of certain class(generally base class) is declared as virtual , then as per rules, it will be OVERRIDDEN if the ditto or identical function is available in the derived class.BUT if the fn is not available in the derived class , then the base class fn is called.so for definition:- virtual function decides which fn is going to be OVERRIDDEN to allow the other identical fn of different class to get executed.
+-Pure Virtual functions :- a function is said to be pure if it HAS been defined in the base class. It has to be defined in the base class. there is no backup of calling the (identical) fn from the base class as we did earlier.if we dont DEFINE this method in the base class, then it will show error. so the function being PURE just insures that the fn has been definitely defined in the derived class.
+the pure function can also be defined but its not of much use since the fn is made PURE to make sure that the identical fn is defined in the derived class. We also cant call it from base class's own object because it has become an abstract class and abstract classes cannot have their objects.
+-an ABSTRACT class is the one which has one or more PURE functions declared in it. an abstract class cannot have its own object. 
+-Diamond Problem in OOPS:-it occurs when the grandchild-derived class has to call the fn of grandparent class, but gets confuse which parent class to use to call the fn since all the parent classes have same base class which is their parent class and grandparent of it. the solution is virtual inheritance.
+-Virtual Inheritance:- Virtual inheritance is a C++ technique that ensures only one copy of a base class's member variables are inherited by grandchild-derived classes.
+we just gotta use virtual keyword while inheriting the base class into the derived class.syntax:-
+class tiger : virtual public animal{}; class Lion : virtual public Animal(){ };  class Liger : public Tiger, public Lion{ };
+-one more difference that virtual inheritance makes is while calling the constructor.if virtual inheritance is not used ,then the grandparent class constructor will be called as many times as the total no. of parent classes because each parent will call the grandparent constructor separately along with its own . It could be avoided by using virtual inheritance. so, only one copy of the base constructor will be called. 
+
+
+
+
+
+
+
