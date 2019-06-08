@@ -31,7 +31,7 @@ aman.addr.hno=342;
 
 aman.show();
 
-//Address ad;//it will show error because nested class object can only be declared in the class , and not in any other function
+//Address ad;// it will show error because nested class object can only be declared in the class , and not in any other function
 Person::Address ad; //we can declared the nested class object in the main fn using the object of class fn and scope resolution.
 
 return 0;
