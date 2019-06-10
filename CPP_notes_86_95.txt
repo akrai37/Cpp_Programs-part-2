@@ -1,0 +1,36 @@
+86-90
+-Nested class:- A class can be defined inside another class. it is known as nested class. nested class object can only be declared in the parent class , and not in any other function like main fn.we can declare the nested class object in the main fn using the object of class fn and scope resolution and the syntax is ---syntax:- Person::Address ad; where "Person" is the parent or main class and "Address" is the nested class.and "ad" is the object of Address class.
+-Local class:- A class defined inside the function is termed as local class. A local class cannot have its object defined in another function. it will be declared inside the parent function.syntax:-void studentlist(){
+class Person{ }; };
+-method and function difference:-method is the function of the class and the fn is just function.
+-operator overloading :-provides the special meaning to the user-defined data type(generally class).
+-plus operator:- it is just operator overloading with "+" operator. there is no certain definition of operator overloading. we can take the example. if there are two constructors with different arguments and those arguments needs to be concatinated together or join together , than we can use operator overloading.look at the code.
+-negative operator:-same as plus operator represented by "-".one more thing, the operator function can be defined outside the class being its member using "scope resolution" operator.
+-if the operator fn is defined inside the class , then we only need one argument in the scope.(look for code). if it is a friend fn , then we need both the arguments.
+-short hand operators:-  +=,-= are short hand operators,there is nothing to be defined here . look at the code for understanding .
+-if the operator fn is the member fn of the class(defined inside inside the class),then the argument will be passed implicitly(no need for any extra variable to store the result).syntax:-void operator+=(int bonusmark){}; //member operator fn 
+-if the operator fn is a friend fn , then it is not a member fn.the value wont be passed implicitly. thats why we will need two objects. one to store the result of calculation and the other to store the calling value.it will be prototyped inside the class and defined outsideas rule for the friend fn. syntax:-friend void operator-=(Marks &obj,int bonusmark); //prototyping friend operator fn
+
+91-95
+overloading increment and decrement operator-----PREFIX:-we can overload increment "++" and "--" operators. if the operator fn is the member fn (defined inside the class),then the argument will be passed imlicitly i.e passed AUTOMATICALLY by the c++.(defined earlier).
+-  (++)and(--)are unary operator i.e they only operate on one operand.syntax:-void operator++(){//we can also use the "Mark"(class) datatype if we want to return the value since void doesnt return any value.
+      mark+=1;
+    };
+-overloading increment and decrement operator-----POSTFIX:- will be defined same as prefix but we have to mention the datatype in the scope where operator is defined. syntax:-  Marks operator--(Marks &mk,int){
+    Marks duplicate(mk);
+    mk.mark-=1;
+    return duplicate;
+ };
+ you can see we are also using the "duplicate" variable which is nothing but the variable that is storing the original value. now this duplicate object is the one that is returned by the operator, so the operator fn is returning the original value and SO, the increment in the value will occur POSTFIX i.e when it will be called next time. 
+- overloading[]array descriptor operators:- we can make the array descriptor("[]") to work with or to assign it with the object of the class.
+special operators cannot use friend function to overload.syntax:- int operator[](parammeters){ body with return value}
+-overloading()function call operators:- we can make the ()operators to work with or to assign it with the object of the class.
+special operators cannot use friend function to overload.syntax:-int operator()(parammeters){ body with return value}.
+-overloading arrow(->)operator:-also known as Class Member Access Operator. the "arrow" operator is assigned to the class object and  calls the "arrow operator function" from the class which is just returning the current object passed implicitly through "this" keyword .syntax:-
+    Marks *operator->(){return this};//arrow operator is also a unary object , so it will take only one parameter and since it is a member function of the class , that value will be passed implicitly.
+   
+
+
+
+
+
