@@ -1,0 +1,43 @@
+96-100
+->exceptional handling is handling runtime anomalities.using try,throw and catch is the cpp way to handle exception.it is better than using normal if-else conditions in casee of large programs.
+-"try" block will check if a condition may lead to exception through if-else statements. If there is an exception , it will "throw" the exception to the "catch" block which contains the mechanism to handle the exception.So, we can say "throw" will pass the command to the "catch" if the condition is xception and "catch" will handle it.
+-in case of "divide by zero error","const char *e" is the type of error.(tutor def)->"const char *e" means that e is a pointer to a bunch of characters which can't be changed 
+->"runtime_error" is passing the object to "catch" of type "runtime_error".in previous ex, the type was of "const char ".syntax:-
+throw runtime_error("throwing the exception ");
+->we have multiple catch block statements  having multiple catch blocks and the "catch" block with the correct datatype of recieving object will be executed.
+In case if the "catch" with the correct datatype doesnt exist ,"catch" with (...) datatype will be called if it is declared(generally it is declared).     
+->In "fuctions throwing exception", "try" block has a "function" instead of "throw" keyword. The function will contain the "throw" keyword and the object will be passed to the "catch" fn. syntax:-  void test() throw(int,char,runtime_error)//datatype of object is //mentioned in the scope. it is neccessary to write it.
+{
+throw 'c';
+
+};
+
+101-105
+->Nested Try-catch statements include nested  try-catch ,as the name suggests. Generally in the inner try-catch block , the exception will be rethrown and it will be catch by the outer catch block statements. The exception rethrown can be the same or different.
+-> User Defined Exception Class is basically the class for handling exception. As the name suggests, it is USER DEFINED CLASS, so it is a USER-DEFINED DATATYPE. instead of using int , char , const char* which are predefined , we are gonna use USER-DEFINED DATATYPE which is basically a class containing different fns to handle the exception .syntax:-    catch(Overspeed sobj){//here Overspeed is the USER DEFINED DATATYPE which is basically the class for handling exception and "s" is its object.
+    sobj.what();//calling one of the fn of exception class through its object that was passed through "throw".
+    sobj.inspeed();//calling one of the fn of exception class through its object that was passed through "throw".
+};
+->"new and delete operator overloading" is similar to other operator overloading . When the keyword of that operator is used , operator fn will be called.
+-"size_t" is the datatype of "size". "size" contains the number of bytes that we want to allocate.
+-new will call the "new operator" in the given class if it is present. if "new operator" has exception , it will be thrown to the "catch" block with an object if try-catch statement is defined.
+ -so basically, what "new" is doing here is assigning the address of the class to pointer of the class(rajptr) and also calling the "new operator" in that class."new operator" will have some statements that will be executed. Same goes for delete. 
+ check for the code.
+->"Operator Overloading Stream insertion(<<) and extraction(>>) operators" is same as any other OO.syntax for prototyping :- 
+friend ostream &operator<<(ostream &output,Person &p);
+friend istream &operator>>(istream &input,Person &p);
+-above we have done prototyping the insertion and extraction operator with friend keyword ,its datatype and with required arguments.we can define these Operator fns later in program.(program was just observed)
+->"copy constructor" will help to call the previous values that were passed through one of class's object .
+when  we will create a duplicate object, it will contain the previous values and not the current values even if it is the duplicate object. There will be no updation in duplicate object values.
+-since , we are using "const" keyword as a datatype of parameter in copy constructor, the value will always be constant when passed .
+    
+	
+	
+	
+	
+	
+	
+	
+
+ 
+    
